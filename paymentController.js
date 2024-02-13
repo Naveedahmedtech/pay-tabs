@@ -1,7 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
 const axios = require("axios");
 
-
 const oneTimePayment = async (req, res) => {
   const { description, amount } = req.body;
   44;
@@ -45,6 +44,7 @@ const oneTimePayment = async (req, res) => {
 
 const paymentCallback = (req, res) => {
   try {
+    // req.body will contain payment information if is successful or not
     return res.status(200).json({ body: req.body });
   } catch (error) {
     console.error("ERROR:", error);
